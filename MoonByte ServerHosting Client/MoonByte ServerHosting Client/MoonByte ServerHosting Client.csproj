@@ -32,11 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Client-RemoteFIleManagement, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RemoteFileManagement.1.0.0\lib\net45\Client-RemoteFIleManagement.dll</HintPath>
+    </Reference>
     <Reference Include="GFS, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GlobalSettingsFramework.1.2.5\lib\net45\GFS.dll</HintPath>
     </Reference>
     <Reference Include="MaterialFramework, Version=4.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialFramework.4.4.2\lib\net45\MaterialFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Spaceshuttle FileTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spaceshuttle-FileTransfer.1.0.0\lib\net45\Spaceshuttle FileTransfer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,18 +56,27 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UniversalClient, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UniversalClient.3.3.2\lib\net45\UniversalClient.dll</HintPath>
+      <HintPath>..\packages\UniversalClient.3.3.4\lib\net45\UniversalClient.dll</HintPath>
     </Reference>
     <Reference Include="UniversalServiceUpdater, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IndieGoat.Net.Updater.1.2.6\lib\net45\UniversalServiceUpdater.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ServerGUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Main\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\UserServers.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\UserServers.cs.Designer.cs">
+      <DependentUpon>UserServers.cs.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBox\MaterialMessageBox.cs">
       <SubType>Form</SubType>
@@ -69,6 +84,9 @@
     <Compile Include="MessageBox\MaterialMessageBox.Designer.cs">
       <DependentUpon>MaterialMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Overlay\ServerModifier.cs" />
+    <Compile Include="Resource Manager\ResourceManager.cs" />
+    <Compile Include="Settings\MoonSettings.cs" />
     <Compile Include="Startup\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Main\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\UserServers.cs.resx">
+      <DependentUpon>UserServers.cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageBox\MaterialMessageBox.resx">
       <DependentUpon>MaterialMessageBox.cs</DependentUpon>
@@ -119,8 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resource Manager\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

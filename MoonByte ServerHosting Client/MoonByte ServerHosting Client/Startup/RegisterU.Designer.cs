@@ -71,7 +71,7 @@
             // 
             // txt_Username
             // 
-            this.txt_Username.BackColor = System.Drawing.Color.White;
+            this.txt_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txt_Username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_Username.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txt_Username.FontColor = System.Drawing.SystemColors.WindowText;
@@ -85,7 +85,7 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.BackColor = System.Drawing.Color.White;
+            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txt_Email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_Email.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txt_Email.FontColor = System.Drawing.SystemColors.WindowText;
@@ -99,7 +99,7 @@
             // 
             // txt_Password
             // 
-            this.txt_Password.BackColor = System.Drawing.Color.White;
+            this.txt_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txt_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_Password.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txt_Password.FontColor = System.Drawing.SystemColors.WindowText;
@@ -113,7 +113,7 @@
             // 
             // txt_ConfirmPassword
             // 
-            this.txt_ConfirmPassword.BackColor = System.Drawing.Color.White;
+            this.txt_ConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txt_ConfirmPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_ConfirmPassword.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txt_ConfirmPassword.FontColor = System.Drawing.SystemColors.WindowText;

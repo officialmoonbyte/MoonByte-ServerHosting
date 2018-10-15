@@ -47,7 +47,7 @@
             this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Title.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Title.Location = new System.Drawing.Point(30, 3);
+            this.lbl_Title.Location = new System.Drawing.Point(215, 9);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(164, 17);
             this.lbl_Title.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.materialTextBox1.Name = "materialTextBox1";
             this.materialTextBox1.Opacity = 100;
             this.materialTextBox1.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
-            this.materialTextBox1.Size = new System.Drawing.Size(220, 24);
+            this.materialTextBox1.Size = new System.Drawing.Size(220, 22);
             this.materialTextBox1.TabIndex = 4;
             this.materialTextBox1.UseSystemPasswordChar = false;
             // 
@@ -90,7 +90,7 @@
             this.materialTextBox2.Name = "materialTextBox2";
             this.materialTextBox2.Opacity = 100;
             this.materialTextBox2.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
-            this.materialTextBox2.Size = new System.Drawing.Size(220, 24);
+            this.materialTextBox2.Size = new System.Drawing.Size(220, 22);
             this.materialTextBox2.TabIndex = 5;
             this.materialTextBox2.UseSystemPasswordChar = false;
             this.materialTextBox2.Load += new System.EventHandler(this.materialTextBox2_Load);
@@ -201,6 +201,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IconLocation = new System.Drawing.Point(10, 4);
             this.Name = "Login";
+            this.ShowIcon = false;
             this.ShowMaxButton = false;
             this.ShowMinButton = false;
             this.ShowTitleLabel = false;
