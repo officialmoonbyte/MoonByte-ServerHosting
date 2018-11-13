@@ -1,4 +1,6 @@
 ﻿using IndieGoat.MaterialFramework.Controls;
+using MoonByte.ClientSoftware.ServerHostingClient.MessageBox;
+using MoonByte.ClientSoftware.ServerHostingClient.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,5 +67,29 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
             this.Hide();
         }
 
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
+            if (txt_Password.Text == txt_ConfirmPassword.Text)
+            {
+                string EncryptedPassword = Encoding.sha256(txt_Password.Text);
+
+                string command = MoonResource.MainClient.ClientSender.SendCommand("userdatabase", new string[] { "adduser", txt_Username.Text, EncryptedPassword });
+                if (command == "USRADD_EXIST") { new MaterialMessageBox("User exist", " \n \n Username already exists!").Show(); }
+                else if (command == "USRADD_TRUE")
+                {
+                    string emailCommand = MoonResource.MainClient.ClientSender.SendCommand("userdatabase", new string[] { "EDITUSERSETTING", txt_Username.Text, EncryptedPassword, "USREMAIL", txt_Email.Text });
+                    if (emailCommand == "EDTSET_TRUE") { Console.WriteLine("Email setting is setup"); } else { Console.WriteLine("Email setting is not setup"); }
+
+                    MoonResource.IsLoggedin = true;
+                    MoonResource.SettingsManager.Username = txt_Username.Text;
+                    MoonResource.SettingsManager.Password = EncryptedPassword;
+                    new MaterialMessageBox("User created", " \n \n The username was sucessfully created!").Show();
+                }
+            }
+            else
+            {
+                new MaterialMessageBox("User error", " \n \n Passwords does not match! Please try again.").Show();
+            }
+        }
     }
 }

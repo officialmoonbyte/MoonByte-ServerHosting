@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lbl_Title = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.lbl_Username = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
-            this.materialTextBox1 = new IndieGoat.MaterialFramework.Controls.MaterialTextBox();
-            this.materialTextBox2 = new IndieGoat.MaterialFramework.Controls.MaterialTextBox();
+            this.txt_username = new IndieGoat.MaterialFramework.Controls.MaterialTextBox();
+            this.txt_password = new IndieGoat.MaterialFramework.Controls.MaterialTextBox();
             this.lbl_Password = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.materialCheckBox1 = new IndieGoat.MaterialFramework.Controls.MaterialCheckBox();
             this.lbl_chek_Auto = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
@@ -66,34 +66,34 @@
             this.lbl_Username.TabIndex = 3;
             this.lbl_Username.Text = "Username";
             // 
-            // materialTextBox1
+            // txt_username
             // 
-            this.materialTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.materialTextBox1.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.materialTextBox1.FontColor = System.Drawing.SystemColors.WindowText;
-            this.materialTextBox1.Location = new System.Drawing.Point(21, 58);
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Opacity = 100;
-            this.materialTextBox1.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
-            this.materialTextBox1.Size = new System.Drawing.Size(220, 22);
-            this.materialTextBox1.TabIndex = 4;
-            this.materialTextBox1.UseSystemPasswordChar = false;
+            this.txt_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txt_username.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.txt_username.FontColor = System.Drawing.SystemColors.WindowText;
+            this.txt_username.Location = new System.Drawing.Point(21, 58);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Opacity = 100;
+            this.txt_username.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
+            this.txt_username.Size = new System.Drawing.Size(220, 22);
+            this.txt_username.TabIndex = 4;
+            this.txt_username.UseSystemPasswordChar = false;
             // 
-            // materialTextBox2
+            // txt_password
             // 
-            this.materialTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.materialTextBox2.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.materialTextBox2.FontColor = System.Drawing.SystemColors.WindowText;
-            this.materialTextBox2.Location = new System.Drawing.Point(21, 124);
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Opacity = 100;
-            this.materialTextBox2.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
-            this.materialTextBox2.Size = new System.Drawing.Size(220, 22);
-            this.materialTextBox2.TabIndex = 5;
-            this.materialTextBox2.UseSystemPasswordChar = false;
-            this.materialTextBox2.Load += new System.EventHandler(this.materialTextBox2_Load);
+            this.txt_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txt_password.BottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.txt_password.FontColor = System.Drawing.SystemColors.WindowText;
+            this.txt_password.Location = new System.Drawing.Point(21, 124);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Opacity = 100;
+            this.txt_password.SelectedBottomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
+            this.txt_password.Size = new System.Drawing.Size(220, 22);
+            this.txt_password.TabIndex = 5;
+            this.txt_password.UseSystemPasswordChar = false;
+            this.txt_password.Load += new System.EventHandler(this.materialTextBox2_Load);
             // 
             // lbl_Password
             // 
@@ -191,8 +191,8 @@
             this.Controls.Add(this.lbl_chek_Auto);
             this.Controls.Add(this.materialCheckBox1);
             this.Controls.Add(this.lbl_Password);
-            this.Controls.Add(this.materialTextBox2);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_username);
             this.Controls.Add(this.lbl_Username);
             this.Controls.Add(this.lbl_Title);
             this.ForeColor = System.Drawing.Color.White;
@@ -218,8 +218,8 @@
 
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_Title;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_Username;
-        private IndieGoat.MaterialFramework.Controls.MaterialTextBox materialTextBox1;
-        private IndieGoat.MaterialFramework.Controls.MaterialTextBox materialTextBox2;
+        private IndieGoat.MaterialFramework.Controls.MaterialTextBox txt_username;
+        private IndieGoat.MaterialFramework.Controls.MaterialTextBox txt_password;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_Password;
         private IndieGoat.MaterialFramework.Controls.MaterialCheckBox materialCheckBox1;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_chek_Auto;

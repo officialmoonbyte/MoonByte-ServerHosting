@@ -1,5 +1,6 @@
 ﻿using IndieGoat.Net.Updater;
 using MoonByte.ClientSoftware.ServerHostingClient.Main;
+using MoonByte.ClientSoftware.ServerHostingClient.Overlay;
 using MoonByte.ClientSoftware.ServerHostingClient.Resources;
 using MoonByte.ClientSoftware.ServerHostingClient.Settings;
 using System;
@@ -21,6 +22,7 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AppDomain.CurrentDomain.ProcessExit += Appdomain_ProcessExit;
 
             Timer domainTimer = new Timer();
             domainTimer.Tick += Domain_Tick;
@@ -52,6 +54,7 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
 
             MoonResource.FileManager = new Net.Plugins.RemoteFileManagement(ServerIP, 4543);
             MoonResource.MainClient.ConnectToRemoteServer(ServerIP, 4543);
+            MoonResource.serverModifier = new ServerModifier(ServerIP, 4543);
 
             MoonResource.ClientUpdater = new UniversalServiceUpdater();
             while (true)
@@ -61,14 +64,14 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
 
             MoonResource.ClientUpdater.CheckUpdate(ServerIP, 4543);
 
-            if(MoonResource.SettingsManager.Username != null)
+            if(MoonResource.SettingsManager.Username != "")
             {
-                string ServerResponse = MoonResource.MainClient.ClientSender.SendCommand("UserDatabase", new string[] { "LOGINUSER", MoonResource.SettingsManager.Username, MoonResource.SettingsManager.Password });
-
+                string ServerResponse = MoonResource.MainClient.ClientSender.SendCommand("userdatabase", new string[] { "LOGINUSER", MoonResource.SettingsManager.Username, MoonResource.SettingsManager.Password });
+                
                 if (ServerResponse == "USRLOG_TRUE")
                 {
                     MoonResource.IsLoggedin = true;
-
+                    MoonResource.UserServers = MoonResource.serverModifier.GetUserServers(MoonResource.SettingsManager.Username);
 
                 } else if (ServerResponse == "USRLOG_WRONG")
                 {
@@ -84,6 +87,15 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
 
         public static string GetExternalIP() { return new WebClient().DownloadString("http://icanhazip.com"); }
         public static string GetRawIP() { return Dns.GetHostEntry("indiegoat.us").AddressList[0].ToString(); }
+
+        #endregion
+
+        #region OnClose
+
+        private static void Appdomain_ProcessExit(object sender, EventArgs e)
+        {
+            MoonResource.SettingsManager.SaveAll();
+        }
 
         #endregion
     }

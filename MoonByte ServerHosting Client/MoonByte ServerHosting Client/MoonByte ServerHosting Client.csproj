@@ -35,8 +35,8 @@
     <Reference Include="Client-RemoteFIleManagement, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RemoteFileManagement.1.0.0\lib\net45\Client-RemoteFIleManagement.dll</HintPath>
     </Reference>
-    <Reference Include="GFS, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GlobalSettingsFramework.1.2.5\lib\net45\GFS.dll</HintPath>
+    <Reference Include="GFS, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlobalSettingsFramework.1.2.6\lib\net45\GFS.dll</HintPath>
     </Reference>
     <Reference Include="MaterialFramework, Version=4.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialFramework.4.4.2\lib\net45\MaterialFramework.dll</HintPath>
@@ -66,6 +66,7 @@
     <Compile Include="Controls\ServerGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Encoding\sha256.cs" />
     <Compile Include="Main\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>

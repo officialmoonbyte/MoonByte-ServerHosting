@@ -5,9 +5,9 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Controls
 {
     public class ServerGUI : UserControl
     {
-        public ServerGUI()
+        public ServerGUI(string Name)
         {
-            this.Size = new System.Drawing.Size(200, 300);
+            this.Size = new System.Drawing.Size(180, 240);
             this.BackColor = Color.Black;
         }
     }

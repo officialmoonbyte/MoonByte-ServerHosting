@@ -1,5 +1,6 @@
 ﻿using IndieGoat.MaterialFramework.Controls;
 using MoonByte.ClientSoftware.ServerHostingClient.MessageBox;
+using MoonByte.ClientSoftware.ServerHostingClient.Resources;
 using System;
 
 namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
@@ -12,9 +13,9 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
         public Login()
         {
             InitializeComponent();
-            materialTextBox1.Text = "";
-            materialTextBox2.Text = "";
-            materialTextBox2.UseSystemPasswordChar = true;
+            txt_username.Text = "";
+            txt_password.Text = "";
+            txt_password.UseSystemPasswordChar = true;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -26,7 +27,15 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
 
         private void btn_Log_Click(object sender, EventArgs e)
         {
-            new MaterialMessageBox("Wrong User Information", " \n \n The given username and password is incorrect! Please try again.").Show();
+            string EncryptedPassword = Encoding.sha256(txt_password.Text);
+
+            string command = MoonResource.MainClient.ClientSender.SendCommand("userdatabase", new string[] { "loginuser", txt_username.Text, EncryptedPassword });
+            if (command.ToUpper() == "USRLOG_TRUE")
+            {
+                MoonResource.IsLoggedin = true;
+                MoonResource.SettingsManager.Username = txt_username.Text;
+                MoonResource.SettingsManager.Password = EncryptedPassword;
+            } else { new MaterialMessageBox("Wrong User Information", " \n \n The given username and password is incorrect! Please try again.").Show(); }
         }
 
         private void lbl_Title_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)

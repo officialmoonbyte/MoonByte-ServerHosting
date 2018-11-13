@@ -39,7 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_mainServer = new System.Windows.Forms.Panel();
             this.pnl_MainUser = new System.Windows.Forms.Panel();
-            this.materialLabel3 = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
+            this.lbl_user = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.pnl_User = new System.Windows.Forms.Panel();
             this.pnl_mainServer.SuspendLayout();
             this.pnl_MainUser.SuspendLayout();
@@ -48,7 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(6, 72);
+            this.panel1.Location = new System.Drawing.Point(6, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(424, 230);
             this.panel1.TabIndex = 2;
@@ -58,7 +58,7 @@
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Title.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.lbl_Title.Location = new System.Drawing.Point(7, 18);
+            this.lbl_Title.Location = new System.Drawing.Point(22, 33);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(234, 30);
             this.lbl_Title.TabIndex = 3;
@@ -68,7 +68,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Location = new System.Drawing.Point(436, 72);
+            this.panel2.Location = new System.Drawing.Point(436, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(351, 112);
             this.panel2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(6, 308);
+            this.panel4.Location = new System.Drawing.Point(6, 320);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(781, 127);
             this.panel4.TabIndex = 3;
@@ -100,7 +100,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.materialLabel1.Location = new System.Drawing.Point(44, 9);
+            this.materialLabel1.Location = new System.Drawing.Point(43, 7);
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(102, 21);
             this.materialLabel1.TabIndex = 8;
@@ -109,7 +109,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Location = new System.Drawing.Point(436, 190);
+            this.panel3.Location = new System.Drawing.Point(436, 202);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(351, 112);
             this.panel3.TabIndex = 4;
@@ -118,30 +118,30 @@
             // 
             this.pnl_mainServer.Controls.Add(this.materialLabel1);
             this.pnl_mainServer.Controls.Add(this.pnl_Server);
-            this.pnl_mainServer.Location = new System.Drawing.Point(436, 30);
+            this.pnl_mainServer.Location = new System.Drawing.Point(436, 32);
             this.pnl_mainServer.Name = "pnl_mainServer";
             this.pnl_mainServer.Size = new System.Drawing.Size(160, 36);
             this.pnl_mainServer.TabIndex = 10;
             // 
             // pnl_MainUser
             // 
-            this.pnl_MainUser.Controls.Add(this.materialLabel3);
+            this.pnl_MainUser.Controls.Add(this.lbl_user);
             this.pnl_MainUser.Controls.Add(this.pnl_User);
-            this.pnl_MainUser.Location = new System.Drawing.Point(627, 30);
+            this.pnl_MainUser.Location = new System.Drawing.Point(627, 32);
             this.pnl_MainUser.Name = "pnl_MainUser";
             this.pnl_MainUser.Size = new System.Drawing.Size(160, 36);
             this.pnl_MainUser.TabIndex = 11;
             // 
-            // materialLabel3
+            // lbl_user
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.materialLabel3.Location = new System.Drawing.Point(44, 9);
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(102, 21);
-            this.materialLabel3.TabIndex = 8;
-            this.materialLabel3.Text = "User Account";
+            this.lbl_user.AutoSize = true;
+            this.lbl_user.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_user.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbl_user.Location = new System.Drawing.Point(44, 8);
+            this.lbl_user.Name = "lbl_user";
+            this.lbl_user.Size = new System.Drawing.Size(102, 21);
+            this.lbl_user.TabIndex = 8;
+            this.lbl_user.Text = "User Account";
             // 
             // pnl_User
             // 
@@ -157,7 +157,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(220)))));
             this.BorderSize = 2;
-            this.ClientSize = new System.Drawing.Size(794, 449);
+            this.ClientSize = new System.Drawing.Size(794, 453);
             this.Controls.Add(this.pnl_MainUser);
             this.Controls.Add(this.pnl_mainServer);
             this.Controls.Add(this.panel3);
@@ -199,7 +199,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnl_mainServer;
         private System.Windows.Forms.Panel pnl_MainUser;
-        private IndieGoat.MaterialFramework.Controls.MaterialLabel materialLabel3;
+        private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_user;
         private System.Windows.Forms.Panel pnl_User;
     }
 }

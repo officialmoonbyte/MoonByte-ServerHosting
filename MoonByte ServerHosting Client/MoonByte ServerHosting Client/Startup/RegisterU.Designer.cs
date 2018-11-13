@@ -40,8 +40,6 @@
             this.lbl_Email = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.lbl_Password = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.lbl_CnfPassword = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
-            this.materialCheckBox1 = new IndieGoat.MaterialFramework.Controls.MaterialCheckBox();
-            this.materialLabel2 = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.materialLabel4 = new IndieGoat.MaterialFramework.Controls.MaterialLabel();
             this.chk_ShowPassword = new IndieGoat.MaterialFramework.Controls.MaterialCheckBox();
             this.SuspendLayout();
@@ -150,7 +148,7 @@
             this.btn_Register.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.btn_Register.BorderWidth = 0;
             this.btn_Register.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_Register.Location = new System.Drawing.Point(57, 357);
+            this.btn_Register.Location = new System.Drawing.Point(48, 313);
             this.btn_Register.MouseOverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Opacity = 100;
@@ -159,6 +157,7 @@
             this.btn_Register.text = "Finish";
             this.btn_Register.TextColor = System.Drawing.Color.Black;
             this.btn_Register.WaveColor = System.Drawing.Color.Black;
+            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
             // 
             // lbl_Email
             // 
@@ -193,30 +192,6 @@
             this.lbl_CnfPassword.TabIndex = 12;
             this.lbl_CnfPassword.Text = "Confirm Password";
             // 
-            // materialCheckBox1
-            // 
-            this.materialCheckBox1.BackColor = System.Drawing.Color.White;
-            this.materialCheckBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.materialCheckBox1.Checked = false;
-            this.materialCheckBox1.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.materialCheckBox1.Location = new System.Drawing.Point(27, 313);
-            this.materialCheckBox1.MiddleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.OnMouseOverColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.materialCheckBox1.Size = new System.Drawing.Size(21, 21);
-            this.materialCheckBox1.TabIndex = 13;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.materialLabel2.Location = new System.Drawing.Point(53, 313);
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(216, 21);
-            this.materialLabel2.TabIndex = 14;
-            this.materialLabel2.Text = "Remember Login information";
-            // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
@@ -249,11 +224,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(220)))));
             this.BorderSize = 2;
-            this.ClientSize = new System.Drawing.Size(313, 409);
+            this.ClientSize = new System.Drawing.Size(313, 362);
             this.Controls.Add(this.chk_ShowPassword);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialCheckBox1);
             this.Controls.Add(this.lbl_CnfPassword);
             this.Controls.Add(this.lbl_Password);
             this.Controls.Add(this.lbl_Email);
@@ -294,8 +267,6 @@
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_Email;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_Password;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel lbl_CnfPassword;
-        private IndieGoat.MaterialFramework.Controls.MaterialCheckBox materialCheckBox1;
-        private IndieGoat.MaterialFramework.Controls.MaterialLabel materialLabel2;
         private IndieGoat.MaterialFramework.Controls.MaterialLabel materialLabel4;
         private IndieGoat.MaterialFramework.Controls.MaterialCheckBox chk_ShowPassword;
     }
