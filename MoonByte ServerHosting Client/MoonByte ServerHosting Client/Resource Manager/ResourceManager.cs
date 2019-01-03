@@ -1,5 +1,6 @@
 ﻿using IndieGoat.Net.Tcp;
 using IndieGoat.Net.Updater;
+using Moonbyte.Logging;
 using MoonByte.ClientSoftware.ServerHostingClient.Overlay;
 using MoonByte.ClientSoftware.ServerHostingClient.Settings;
 using MoonByte.Net.Plugins;
@@ -14,6 +15,10 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Resources
         public static MoonSettings SettingsManager = new MoonSettings();
         public static RemoteFileManagement FileManager;
         public static ServerModifier serverModifier;
+        public static Moonlog ILogger = new Moonlog();
+
+        public static string ServerIP;
+        public static int ServerPort;
 
         public static string ServerDirectory;
         public static List<string> UserServers;

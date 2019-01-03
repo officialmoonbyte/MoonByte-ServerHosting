@@ -1,4 +1,5 @@
 ﻿using IndieGoat.MaterialFramework.Controls;
+using MoonByte.ClientSoftware.ServerHostingClient.Overlay;
 using MoonByte.ClientSoftware.ServerHostingClient.Resources;
 using MoonByte.ClientSoftware.ServerHostingClient.Startup;
 using System;
@@ -20,6 +21,7 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Main
             SetPanelEvents();
 
             if (MoonResource.IsLoggedin == false) { pnl_MainUser.Location = new Point(pnl_MainUser.Location.X - 20, pnl_MainUser.Location.Y); pnl_MainUser.Width += 10; lbl_user.Text = "Login or Register"; }
+            AddServer(MoonResource.SettingsManager.Username, "Testing!!", "est", "est");
         }
 
         private void lbl_Title_MouseMove(object sender, MouseEventArgs e)
@@ -31,7 +33,13 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Main
 
         #region MouseEvents
 
-
+        private void AddServer(string Username, string ServerName, string StartFile, string ServerArgs)
+        {
+            ServerModifier serverModifier = new ServerModifier(MoonResource.ServerIP, MoonResource.ServerPort);
+            serverModifier.CreateServer(Username, ServerName);
+            serverModifier.WriteSetting(Username, ServerName, "STARTFILE", StartFile);
+            serverModifier.WriteSetting(Username, ServerName, "SERVERARGS", ServerArgs);
+        }
 
         #endregion
 

@@ -61,7 +61,6 @@
             this.flatButton1.text = "Back";
             this.flatButton1.TextColor = System.Drawing.Color.Black;
             this.flatButton1.WaveColor = System.Drawing.Color.Black;
-            this.flatButton1.Click += new System.EventHandler(this.flatButton1_Click);
             // 
             // flatButton2
             // 
@@ -105,6 +104,7 @@
             this.Text = "UserServers";
             this.Load += new System.EventHandler(this.UserServers_Load);
             this.ResizeEnd += new System.EventHandler(this.UserServers_ResizeEnd);
+            this.Resize += new System.EventHandler(this.UserServers_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

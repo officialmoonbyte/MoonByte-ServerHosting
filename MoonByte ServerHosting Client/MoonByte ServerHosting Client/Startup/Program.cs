@@ -1,10 +1,11 @@
 ﻿using IndieGoat.Net.Updater;
+using Moonbyte.Logging;
 using MoonByte.ClientSoftware.ServerHostingClient.Main;
 using MoonByte.ClientSoftware.ServerHostingClient.Overlay;
 using MoonByte.ClientSoftware.ServerHostingClient.Resources;
-using MoonByte.ClientSoftware.ServerHostingClient.Settings;
 using System;
 using System.Net;
+using System.Resources;
 using System.Windows.Forms;
 
 
@@ -20,16 +21,24 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
         [STAThread]
         static void Main()
         {
+            MoonResource.ILogger.SetLoggingEvents();
+            MoonResource.ILogger.AddToLog("INFO", "Starting logging services.");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AppDomain.CurrentDomain.ProcessExit += Appdomain_ProcessExit;
+
+            MoonResource.ILogger.AddToLog("INFO", "Added application visual styles.");
 
             Timer domainTimer = new Timer();
             domainTimer.Tick += Domain_Tick;
             domainTimer.Start();
 
+            MoonResource.ILogger.AddToLog("INFO", "Initialized Domain Timer.");
+
             InitializeServerConnections();
 
+            MoonResource.ILogger.AddToLog("INFO", "Finished initializing connections.");
             login = new MainPage();
 
             Application.Run(login);
@@ -55,6 +64,9 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
             MoonResource.FileManager = new Net.Plugins.RemoteFileManagement(ServerIP, 4543);
             MoonResource.MainClient.ConnectToRemoteServer(ServerIP, 4543);
             MoonResource.serverModifier = new ServerModifier(ServerIP, 4543);
+
+            MoonResource.ServerIP = ServerIP;
+            MoonResource.ServerPort = 4543;
 
             MoonResource.ClientUpdater = new UniversalServiceUpdater();
             while (true)
@@ -94,6 +106,7 @@ namespace MoonByte.ClientSoftware.ServerHostingClient.Startup
 
         private static void Appdomain_ProcessExit(object sender, EventArgs e)
         {
+            MoonResource.ILogger.WriteLog();
             MoonResource.SettingsManager.SaveAll();
         }
 

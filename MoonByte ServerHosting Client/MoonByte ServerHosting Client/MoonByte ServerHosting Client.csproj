@@ -41,6 +41,9 @@
     <Reference Include="MaterialFramework, Version=4.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialFramework.4.4.2\lib\net45\MaterialFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MoonLog, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moonlog.1.0.2\lib\net45\MoonLog.dll</HintPath>
+    </Reference>
     <Reference Include="Spaceshuttle FileTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Spaceshuttle-FileTransfer.1.0.0\lib\net45\Spaceshuttle FileTransfer.dll</HintPath>
     </Reference>
@@ -56,7 +59,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UniversalClient, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UniversalClient.3.3.4\lib\net45\UniversalClient.dll</HintPath>
+      <HintPath>..\packages\UniversalClient.3.3.2\lib\net45\UniversalClient.dll</HintPath>
     </Reference>
     <Reference Include="UniversalServiceUpdater, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IndieGoat.Net.Updater.1.2.6\lib\net45\UniversalServiceUpdater.dll</HintPath>
@@ -67,11 +70,18 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Encoding\sha256.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Main\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\ServerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\ServerSettings.Designer.cs">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\UserServers.cs.cs">
       <SubType>Form</SubType>
@@ -85,6 +95,7 @@
     <Compile Include="MessageBox\MaterialMessageBox.Designer.cs">
       <DependentUpon>MaterialMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Networking\ConsoleOverlay.cs" />
     <Compile Include="Overlay\ServerModifier.cs" />
     <Compile Include="Resource Manager\ResourceManager.cs" />
     <Compile Include="Settings\MoonSettings.cs" />
@@ -104,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="Main\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\ServerSettings.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\UserServers.cs.resx">
       <DependentUpon>UserServers.cs.cs</DependentUpon>
